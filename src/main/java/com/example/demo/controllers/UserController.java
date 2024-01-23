@@ -15,7 +15,7 @@ public class UserController {
     UserService userService;
 
     //POST
-    @PostMapping("/users")
+    @PostMapping("/user")
         public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
