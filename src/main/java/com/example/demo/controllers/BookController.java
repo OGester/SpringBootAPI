@@ -26,5 +26,10 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    //PUT
+    @PutMapping("/book")
+    public Book updateBook(@RequestBody Book book) {
+        return bookService.updateBook(book);
+    }
 
 }

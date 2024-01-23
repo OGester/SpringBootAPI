@@ -20,6 +20,10 @@ public class BookService {
     // get a list of all books
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
 
+    // update book by id
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
     }
 }
