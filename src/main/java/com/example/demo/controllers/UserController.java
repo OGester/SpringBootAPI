@@ -37,4 +37,11 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    //DELETE specific user
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String deleteUserById(@PathVariable String id) {
+        return userService.deleteUserById(id);
+    }
+
+
 }
