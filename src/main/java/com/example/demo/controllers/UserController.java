@@ -30,4 +30,11 @@ public class UserController {
     public User updateUser(@RequestBody User user) {
         return userService.updateUser(user);
     }
+
+    //GET specific user by id
+    @RequestMapping(value ="/{id}", method = RequestMethod.GET)
+    public User getUserById(@PathVariable String id) {
+        return userService.getUserById(id);
+    }
+
 }
