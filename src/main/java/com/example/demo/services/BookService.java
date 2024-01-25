@@ -22,7 +22,7 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    // update book by id
+    // update book
     public Book updateBook(Book book) {
         return bookRepository.save(book);
     }
