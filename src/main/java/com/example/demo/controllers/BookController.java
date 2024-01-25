@@ -32,4 +32,9 @@ public class BookController {
         return bookService.updateBook(book);
     }
 
+    //GET book by id
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Book getBookById(@PathVariable String id) {
+        return bookService.getBookById(id);
+    }
 }

@@ -26,4 +26,8 @@ public class BookService {
     public Book updateBook(Book book) {
         return bookRepository.save(book);
     }
+    //get specific book by id
+    public Book getBookById(String id) {
+        return bookRepository.findById(id).get();
+    }
 }
