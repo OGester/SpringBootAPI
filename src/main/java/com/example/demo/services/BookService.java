@@ -30,4 +30,11 @@ public class BookService {
     public Book getBookById(String id) {
         return bookRepository.findById(id).get();
     }
+
+    // delete specific book by id
+    public String deleteBookById(String id) {
+        bookRepository.deleteById(id);
+        return "Book successfully deleted!";
+
+    }
 }
