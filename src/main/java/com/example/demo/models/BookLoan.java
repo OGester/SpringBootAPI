@@ -8,17 +8,12 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @Document(collection = "borrowedBooks")
-public class BorrowedBooks {
+public class BookLoan {
     @Id
     private String id;
-    //@DocumentReference(lazy = true) private List<Book> books;
 
-    //@DocumentReference(collection = "books")
-    private String[] borrowedBooks;
-    //@DocumentReference
-    //private List<Book> books;
+    private String[] booksLoaned;
 
-    //@DocumentReference(collection = "users")
     private String userId;
 
     @CreatedDate
@@ -28,15 +23,15 @@ public class BorrowedBooks {
     private LocalDate returnAt = LocalDate.now().plusDays(14);
 
 
-    public BorrowedBooks() {
+    public BookLoan() {
     }
 
     public String getId() {
         return id;
     }
 
-    public String[] getBorrowedBooks() {
-        return borrowedBooks;
+    public String[] getBooksLoaned() {
+        return booksLoaned;
     }
 
     public String getUserId() {
@@ -55,7 +50,5 @@ public class BorrowedBooks {
         this.returnAt = returnAt;
     }
 
-   /* public List<Book> getBooks() {
-        return books;
-    }*/
+
 }
