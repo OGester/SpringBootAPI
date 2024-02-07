@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.models.Book;
-import com.example.demo.models.BookLoan;
 import com.example.demo.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ public class BookService {
     BookRepository bookRepository;
 
     @Autowired
-    private BookLoanService bookLoanService;
+    private BorrowedBooksService bookLoanService;
 
     // create a new book
     public Book createBook(Book book) {
@@ -42,10 +41,10 @@ public class BookService {
     }
 
     //POST add bookloan to user with ObjectId reference
-    public Book addBookToBookLoan(String bookId, BookLoan bookLoan){
+    /*public Book addBookToBookLoan(String bookId, BookLoan bookLoan){
         Book book = bookRepository.findById(bookId).orElseThrow(() -> new RuntimeException("Book not found!"));
         BookLoan saveBookLoan = bookLoanService.saveBookLoan(bookLoan);
         book.getBookLoans().add(saveBookLoan);
         return bookRepository.save(book);
-    }
+    }*/
 }

@@ -1,11 +1,8 @@
 package com.example.demo.controllers;
 
-import com.example.demo.exception.EntityNotFoundException;
 import com.example.demo.models.Book;
-import com.example.demo.models.BookLoan;
 import com.example.demo.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,7 +45,7 @@ public class BookController {
     }
 
     //POST add book to BookLoan by ObjectId
-    @PostMapping("/{bookId}/bookLoans")
+   /* @PostMapping("/{bookId}/bookLoans")
     public ResponseEntity<Book> addBookToBookLOan(@PathVariable String bookId, @RequestBody BookLoan bookLoan) {
         try {
             Book updatedBook = bookService.addBookToBookLoan(bookId, bookLoan);
@@ -57,5 +54,5 @@ public class BookController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 }

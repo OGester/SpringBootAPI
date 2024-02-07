@@ -1,11 +1,7 @@
 package com.example.demo.models;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Document(collection = "books")
 public class Book {
@@ -21,8 +17,9 @@ public class Book {
     private String genre;
 
     //book reference by ObjectId
-    @DBRef
-    private List<BookLoan> bookLoans =new ArrayList<>();
+    //@DBRef
+    //private List<BookLoan> bookLoans =new ArrayList<>();
+    // Do the exact same things but flip it to get a list of books inside bookloans instead!
 
     public Book() {
     }
@@ -47,11 +44,11 @@ public class Book {
         return genre;
     }
 
-    public List<BookLoan> getBookLoans() {
+   /* public List<BookLoan> getBookLoans() {
         return bookLoans;
     }
 
     public void setBookLoans(List<BookLoan> bookLoans) {
         this.bookLoans = bookLoans;
-    }
+    }*/
 }
