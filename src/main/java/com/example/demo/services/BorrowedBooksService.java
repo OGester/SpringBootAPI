@@ -62,6 +62,18 @@ public class BorrowedBooksService {
         return borrowedBooksRepository.save(borrowedBooks);
     }
 
+    //get specific borrowed books by id
+    public Optional<BorrowedBooks> getBorrowedBooksById(String id) {
+        return borrowedBooksRepository.findById(id);
+    }
+
+    //delete specific boorowed books by id
+    public String deleteBorrowedBooksById(String id) {
+        borrowedBooksRepository.deleteById(id);
+        return "Book loan successfully deleted!";
+    }
+
+
 
 
 }

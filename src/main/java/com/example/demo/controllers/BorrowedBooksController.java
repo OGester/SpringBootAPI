@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/api/borrowedbooks")
@@ -34,6 +35,20 @@ public class BorrowedBooksController {
     @PutMapping()
     public BorrowedBooks updateBorrowedBooks(@RequestBody BorrowedBooks borrowedBooks) {
         return borrowedBooksService.updateBorrowedBooks(borrowedBooks);
+    }
+
+    //GET borrowedBooks by id
+    @GetMapping("/{id}")
+    public ResponseEntity<BorrowedBooks> getBorrowedBooksById(@PathVariable String id) {
+        Optional<BorrowedBooks> borrowedBooks = borrowedBooksService.getBorrowedBooksById(id);
+        return borrowedBooks.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    //DELETE borrowedBooks by id
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String deleteBorrowedBooksById(@PathVariable String id) {
+        return borrowedBooksService.deleteBorrowedBooksById(id);
     }
 
 
