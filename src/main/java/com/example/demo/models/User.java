@@ -21,15 +21,32 @@ public class User {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getUserName() {
         return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getUserAdress() {
         return userAdress;
     }
 
+    public void setUserAdress(String userAdress) {
+        this.userAdress = userAdress;
+    }
+
     public String getUserPhoneNr() {
         return userPhoneNr;
     }
+
+    public void setUserPhoneNr(String userPhoneNr) {
+        this.userPhoneNr = userPhoneNr;
+    }
 }
+

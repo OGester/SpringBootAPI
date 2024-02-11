@@ -3,9 +3,11 @@ package com.example.demo.controllers;
 import com.example.demo.models.User;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value= "/api/users")
@@ -32,10 +34,16 @@ public class UserController {
     }
 
     //GET specific user by id
-    @RequestMapping(value ="/{id}", method = RequestMethod.GET)
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable String id) {
+        Optional<User> user = userService.getUserById(id);
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+    /*@RequestMapping(value ="/{id}", method = RequestMethod.GET)
     public User getUserById(@PathVariable String id) {
         return userService.getUserById(id);
-    }
+    }*/
 
     //DELETE specific user
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

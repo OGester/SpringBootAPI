@@ -18,7 +18,8 @@ public class BorrowedBooks {
     @DBRef
     private List<Book> books =new ArrayList<>();
 
-    private String userId = "123";
+    @DBRef
+    private User user;
 
     @CreatedDate
     private Date borrowedAt;
@@ -28,19 +29,6 @@ public class BorrowedBooks {
 
 
     public BorrowedBooks() {
-    }
-
-
-    public String getId() {
-        return id;
-    }
-
-    /*public String[] getBooksLoaned() {
-        return booksLoaned;
-    }*/
-
-    public String getUserId() {
-        return userId;
     }
 
     public Date getBorrowedAt() {
@@ -67,4 +55,20 @@ public class BorrowedBooks {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+
+
 }

@@ -44,11 +44,4 @@ public class Book {
         return genre;
     }
 
-   /* public List<BookLoan> getBookLoans() {
-        return bookLoans;
-    }
-
-    public void setBookLoans(List<BookLoan> bookLoans) {
-        this.bookLoans = bookLoans;
-    }*/
 }
