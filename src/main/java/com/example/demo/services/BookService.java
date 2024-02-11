@@ -32,10 +32,6 @@ public class BookService {
     public Optional<Book> getBookById(String id) {
         return bookRepository.findById(id);
     }
-    /*public Book getBookById(String id) {
-        //retrieving the book with matching id through the getter in book model
-        return bookRepository.findById(id).get();
-    }*/
 
     // delete specific book by id
     public String deleteBookById(String id) {

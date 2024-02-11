@@ -24,7 +24,8 @@ public class BorrowedBooksService {
     private UserRepository userRepository;
 
 
-
+    //POST
+    //create Borrowed books with userId and bookIds
     public BorrowedBooks addBooks(String userId, List<String> bookIds ) {
         Optional<User> userOptional = userRepository.findById(userId);
         if (!userOptional.isPresent()) {
@@ -49,14 +50,20 @@ public class BorrowedBooksService {
 
     }
 
+    //GET
+    //Get all book Loans
+    public List<BorrowedBooks> getAllBorrowedBooks() {
+        return borrowedBooksRepository.findAll();
+    }
+
+    //PUT
+    //Update specific book Loan by id
+    public BorrowedBooks updateBorrowedBooks(BorrowedBooks borrowedBooks) {
+        return borrowedBooksRepository.save(borrowedBooks);
+    }
+
 
 
 }
 
 
-    /*List<Book> books = bookRepository.findAllById(bookIds);
-    User user = userRepository.findById(userId).get();
-    BorrowedBooks borrowedBooks = new BorrowedBooks();
-        borrowedBooks.setBooks(books);
-                borrowedBooks.setUser(user);
-                return borrowedBooksRepository.save(borrowedBooks);*/
